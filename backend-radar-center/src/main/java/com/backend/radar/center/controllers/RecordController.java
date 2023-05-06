@@ -1,7 +1,8 @@
 package com.backend.radar.center.controllers;
 
 import java.util.List;
-import java.util.Optional;
+
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.backend.radar.center.models.dtos.RecordCreateDto;
 import com.backend.radar.center.models.entities.RecordEntity;
 import com.backend.radar.center.services.RecordService;
 
@@ -31,8 +33,13 @@ public class RecordController {
 	}
 
 	@GetMapping(path = "findById/{id}")
-	public ResponseEntity<Optional<RecordEntity>> findById(@PathVariable final Long id) {
+	public ResponseEntity<RecordEntity> findById(@PathVariable final Long id) {
 		return new ResponseEntity<>(this.recordService.findById(id), HttpStatus.OK);
+	}
+	
+	@GetMapping(path = "findByLicensePlate/{licensePlate}")
+	public ResponseEntity<List<RecordEntity>> findByLicensePlate(@PathVariable final String licensePlate) {
+		return new ResponseEntity<>(this.recordService.findByLicensePlate(licensePlate), HttpStatus.OK);
 	}
 
 	@GetMapping(path = "findAll")
@@ -41,8 +48,7 @@ public class RecordController {
 	}
 
 	@PostMapping(path = "save")
-	public ResponseEntity<Void> save(@RequestBody final RecordEntity request) {
-		this.recordService.save(request);
-		return new ResponseEntity<>(HttpStatus.CREATED);
+	public ResponseEntity<RecordEntity> save(@Valid @RequestBody final RecordCreateDto dto) {
+		return new ResponseEntity<>(this.recordService.save(dto), HttpStatus.CREATED);
 	}
 }

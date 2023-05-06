@@ -12,12 +12,15 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.backend.radar.center.models.dtos.RecordCreateDto;
 import com.backend.radar.center.models.enums.VehicleClassEnum;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Entity
 @Data
+@NoArgsConstructor
+@Entity
 @Table(name = "records")
 public class RecordEntity implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -38,9 +41,16 @@ public class RecordEntity implements Serializable {
 	@Enumerated(EnumType.STRING)
 	private VehicleClassEnum vehicleClass;
 
+	public RecordEntity(RecordCreateDto dto) {
+		this.licensePlate = dto.getLicensePlate();
+		this.speed = dto.getSpeed();
+		this.time = dto.getTime();
+		this.vehicleClass = dto.getVehicleClass();
+	}
+
 	@Override
 	public String toString() {
-		return "Id: " + id + ", Speed: " + speed + ", License plate: " + licensePlate + ", Time: " + time
+		return "Id: " + id + ", Speed: " + speed + "km/h, License plate: " + licensePlate + ", Time: " + time
 				+ ", Vehicle class: " + vehicleClass;
 	}
 }
