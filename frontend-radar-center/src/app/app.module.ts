@@ -8,6 +8,7 @@ import { MaterialDesignModule } from '@modules/material-design.module';
 import { RecordComponent } from '@pages/record/record.component';
 import { HomeComponent } from '@pages/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
+import { PipesModule } from '@modules/pipes.module';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     BrowserAnimationsModule,
     MaterialDesignModule,
+    PipesModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

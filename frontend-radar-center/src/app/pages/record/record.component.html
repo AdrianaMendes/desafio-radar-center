@@ -4,27 +4,28 @@
     <mat-label>Filter</mat-label>
     <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
 </mat-form-field>
-<mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
     <ng-container matColumnDef="id">
-        <mat-header-cell *matHeaderCellDef>ID</mat-header-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header>ID</mat-header-cell>
         <mat-cell *matCellDef="let row"> {{row.id}} </mat-cell>
     </ng-container>
     <ng-container matColumnDef="speed">
-        <mat-header-cell *matHeaderCellDef>Speed</mat-header-cell>
-        <mat-cell *matCellDef="let row"> {{row.speed}} </mat-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Speed</mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.speed}}km/h </mat-cell>
     </ng-container>
     <ng-container matColumnDef="time">
-        <mat-header-cell *matHeaderCellDef>Time</mat-header-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Time</mat-header-cell>
         <mat-cell *matCellDef="let row"> {{row.time | date: 'dd/MM/yyyy HH:mm:ss'}} </mat-cell>
     </ng-container>
     <ng-container matColumnDef="vehicleClass">
-        <mat-header-cell *matHeaderCellDef>Vehicle Class</mat-header-cell>
-        <mat-cell *matCellDef="let row"> {{row.vehicleClass}} </mat-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Vehicle Class</mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.vehicleClass | vehicleClassPipe}} </mat-cell>
     </ng-container>
     <ng-container matColumnDef="licensePlate">
-        <mat-header-cell *matHeaderCellDef>License Plate</mat-header-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header>License Plate</mat-header-cell>
         <mat-cell *matCellDef="let row"> {{row.licensePlate}} </mat-cell>
     </ng-container>
     <mat-header-row *matHeaderRowDef="displayedColumns" />
     <mat-row *matRowDef="let row; columns: displayedColumns;" />
 </mat-table>
+<mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
