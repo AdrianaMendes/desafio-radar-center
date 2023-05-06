@@ -66,7 +66,7 @@ public class RecordService {
 		dto.setAverageSpeedLast10Min(new ArrayList<>(10));
 		dto.setCountVehicleClass(new ArrayList<>(VehicleClassEnum.length()));
 
-		for (Integer i = 0; i < 10; i++) {
+		for (Integer i = 0; i <= 10; i++) {
 			dto.getAverageSpeedLast10Min().add(this.recordRepository.averageSpeedInterval(i + 1, i));
 		}
 		

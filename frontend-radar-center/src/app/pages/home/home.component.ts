@@ -1,11 +1,12 @@
-import { AfterViewInit, Component } from '@angular/core';
+import { AfterViewInit, Component, OnDestroy } from '@angular/core';
 import { RecordService } from '@services/record.service';
 import { ChartConfiguration, ChartData } from 'chart.js';
+import { Observable, Subscription, interval } from 'rxjs';
 
 @Component({
   templateUrl: './home.component.html',
 })
-export class HomeComponent implements AfterViewInit {
+export class HomeComponent implements AfterViewInit, OnDestroy {
   lineChartOptions: ChartConfiguration['options'] = {
     responsive: true,
     maintainAspectRatio: false,
@@ -41,6 +42,10 @@ export class HomeComponent implements AfterViewInit {
     maintainAspectRatio: false,
     aspectRatio: 1,
     plugins: {
+      title: {
+        display: true,
+        text: 'Classificação dos veículos'
+      },
       legend: {
         display: true,
         position: 'top',
@@ -50,10 +55,26 @@ export class HomeComponent implements AfterViewInit {
   pieChartData: ChartData<'pie', number[], string | string[]> | null = null;
   averageSpeed: number = 0;
   countTotalRecords: number = 0;
+  subscription?: Subscription;
+  progress: number = 0;
 
   constructor(private readonly recordService: RecordService) { }
 
   ngAfterViewInit(): void {
+    this.refresh();
+    const source: Observable<number> = interval(10000);
+    const timer: Observable<number> = interval(1000);
+    this.subscription = source.subscribe(() => this.refresh());
+    this.subscription = timer.subscribe(() => {
+      this.progress = (this.progress + 10) % 100;
+    });
+  }
+
+  ngOnDestroy(): void {
+    this.subscription && this.subscription.unsubscribe();
+  }
+
+  refresh(): void {
     this.recordService.dashboard().subscribe({
       next: (response) => {
         this.averageSpeed = response.averageSpeed;

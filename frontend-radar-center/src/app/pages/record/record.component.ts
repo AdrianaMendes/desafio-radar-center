@@ -14,9 +14,8 @@ export class RecordComponent implements AfterViewInit {
   @ViewChild(MatPaginator, { static: true }) paginator!: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort!: MatSort;
 
-  constructor(private readonly recordService: RecordService) {
-  }
-  
+  constructor(private readonly recordService: RecordService) { }
+
   ngAfterViewInit(): void {
     this.dataSource = new MatTableDataSource<IRecord>([]);
     this.recordService.findAll().subscribe({
