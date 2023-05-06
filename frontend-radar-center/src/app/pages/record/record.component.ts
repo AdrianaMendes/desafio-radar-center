@@ -29,7 +29,7 @@ export class RecordComponent implements AfterViewInit {
 
   applyFilter(event: Event): void {
     const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
+    this.dataSource.filter = filterValue.trim().toLowerCase().replace(/(\s|\-)/gm, '');
   }
 
   refresh(): void {

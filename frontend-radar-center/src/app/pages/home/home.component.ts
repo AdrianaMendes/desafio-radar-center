@@ -14,7 +14,7 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
     plugins: {
       title: {
         display: true,
-        text: 'Velocidade nos últimos 10 minutos'
+        text: 'Speed in the last 10 minutes'
       },
     },
     scales: {
@@ -44,7 +44,7 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
     plugins: {
       title: {
         display: true,
-        text: 'Classificação dos veículos'
+        text: 'Vehicle Classification'
       },
       legend: {
         display: true,
