@@ -1,0 +1,47 @@
+{"properties": [
+  {
+    "name": "application.title",
+    "type": "java.lang.String",
+    "description": "A description for 'application.title'"
+  },
+  {
+    "name": "application.version",
+    "type": "java.lang.String",
+    "description": "A description for 'application.version'"
+  },
+  {
+    "name": "application.author",
+    "type": "java.lang.String",
+    "description": "A description for 'application.author'"
+  },
+  {
+    "name": "application.license",
+    "type": "java.lang.String",
+    "description": "A description for 'application.license'"
+  },
+  {
+    "name": "db.username",
+    "type": "java.lang.String",
+    "description": "A description for 'db.username'"
+  },
+  {
+    "name": "db.password",
+    "type": "java.lang.String",
+    "description": "A description for 'db.password'"
+  },
+  {
+    "name": "db.host",
+    "type": "java.lang.String",
+    "description": "A description for 'db.host'"
+  },
+  {
+    "name": "db.database",
+    "type": "java.lang.String",
+    "description": "A description for 'db.database'"
+  },
+  {
+    "name": "db.port",
+    "type": "java.lang.String",
+    "description": "A description for 'db.port'"
+  }
+]}
