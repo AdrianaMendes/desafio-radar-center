@@ -1,2 +1,38 @@
 <h2>Home</h2>
-<mat-divider></mat-divider>
+<mat-divider />
+<div class="flex-col gap-16">
+    <div class="flex-row space-between gap-16">
+        <mat-card class="w-100">
+            <mat-card-content>
+                <canvas baseChart [data]="lineChartData!" [options]="lineChartOptions" type="line"></canvas>
+            </mat-card-content>
+        </mat-card>
+        <mat-card class="w-100">
+            <mat-card-content>
+                <canvas baseChart [data]="pieChartData!" [options]="pieChartOptions" type="pie"></canvas>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <div class="flex-row space-between gap-16">
+        <mat-card class="w-100">
+            <mat-card-header>
+                <mat-card-title>Total of records</mat-card-title>
+            </mat-card-header>
+            <mat-card-content class="flex-row justify-center">
+                <button class="fab" mat-fab color="warn">
+                    {{ countTotalRecords }}
+                </button>
+            </mat-card-content>
+        </mat-card>
+        <mat-card class="w-100">
+            <mat-card-header>
+                <mat-card-title>Average Speed</mat-card-title>
+            </mat-card-header>
+            <mat-card-content class="flex-row justify-center">
+                <button class="fab" mat-fab color="warn">
+                    {{ averageSpeed | number: '1.2-2' }}km\h
+                </button>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

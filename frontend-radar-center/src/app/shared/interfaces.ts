@@ -1,5 +1,5 @@
 export enum EVehicleClass {
-    TRUCK, SUV, MOTORCYCLE, BUS, VAN, PICKUP, REFUSE, SCHOOL_BUS, TRUCK_TRACTOR
+    TRUCK = 'TRUCK', SUV = 'SUV', MOTORCYCLE = 'MOTORCYCLE', BUS = 'BUS', CAR = 'CAR'
 }
 
 export interface IRecord {
@@ -18,13 +18,13 @@ export interface IRecordCreateDto {
 }
 
 export interface IDashboard {
-    countTotalRecords:     number;
-    averageSpeed:          number;
-    averageSpeedLast10Min: (number | null)[];
-    countVehicleClass:     ICountVehicleClass[];
+    countTotalRecords: number;
+    averageSpeed: number;
+    averageSpeedLast10Min: number[];
+    countVehicleClass: ICountVehicleClass[];
 }
 
 export interface ICountVehicleClass {
-    count:        number;
+    count: number;
     vehicleClass: EVehicleClass;
 }

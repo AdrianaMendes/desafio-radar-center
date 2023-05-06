@@ -2,8 +2,8 @@ package com.backend.radar.center.models.enums;
 
 import java.util.Random;
 
-public enum VehicleClassEnum {
-	TRUCK, SUV, MOTORCYCLE, BUS, VAN, PICKUP, REFUSE, SCHOOL_BUS, TRUCK_TRACTOR;
+public enum VehicleClassEnum {	
+	TRUCK, SUV, MOTORCYCLE, BUS, CAR;
 
 	private static final Random random = new Random();
 
@@ -11,8 +11,25 @@ public enum VehicleClassEnum {
 		return VehicleClassEnum.values().length;
 	}
 
+	/**
+	 * Ordem de prioridade na geração da classe do veículo, MOTORCYLE > CAR, SUV > TRUCK > BUS
+	 */
 	public static VehicleClassEnum randomVehicleClass() {
-		VehicleClassEnum[] vehicleClass = values();
-		return vehicleClass[random.nextInt(length())];
+		VehicleClassEnum[] vehicleClassValues = values();
+		VehicleClassEnum vehicleClass = vehicleClassValues[random.nextInt(length())];
+		
+		if (vehicleClass == VehicleClassEnum.SUV || vehicleClass == VehicleClassEnum.CAR || vehicleClass == VehicleClassEnum.BUS || vehicleClass == VehicleClassEnum.TRUCK) {
+			vehicleClass = vehicleClassValues[random.nextInt(length())];
+		}
+		
+		if (vehicleClass == VehicleClassEnum.BUS || vehicleClass == VehicleClassEnum.TRUCK) {
+			vehicleClass = vehicleClassValues[random.nextInt(length())];
+		}
+		
+		if (vehicleClass == VehicleClassEnum.BUS) {
+			vehicleClass = vehicleClassValues[random.nextInt(length())];
+		}
+		
+		return vehicleClass;
 	}
 }

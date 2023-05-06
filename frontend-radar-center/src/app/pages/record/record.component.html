@@ -15,7 +15,7 @@
         </ng-container>
         <ng-container matColumnDef="speed">
             <mat-header-cell *matHeaderCellDef mat-sort-header>Speed</mat-header-cell>
-            <mat-cell *matCellDef="let row"> {{row.speed}}km/h </mat-cell>
+            <mat-cell *matCellDef="let row"> {{row.speed | number : '1.2-2' }}km/h </mat-cell>
         </ng-container>
         <ng-container matColumnDef="time">
             <mat-header-cell *matHeaderCellDef mat-sort-header>Time</mat-header-cell>

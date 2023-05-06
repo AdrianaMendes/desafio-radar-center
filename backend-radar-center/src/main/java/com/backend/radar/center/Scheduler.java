@@ -14,7 +14,7 @@ public class Scheduler {
 	@Autowired
 	private RecordService recordService;
 		
-	@Scheduled(fixedDelay = 10000)
+	@Scheduled(fixedDelay = 1000)
 	public void generateRecord() {
 		this.recordService.generateRecord(); 
 	}

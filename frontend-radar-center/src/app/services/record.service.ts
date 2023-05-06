@@ -25,7 +25,7 @@ export class RecordService {
 		return this.httpClient.get<IRecord>(`${this.url}/findById/${id}`);
 	}
 
-	dashboard(id: number): Observable<IDashboard> {
+	dashboard(): Observable<IDashboard> {
 		return this.httpClient.get<IDashboard>(`${this.url}/dashboard`);
 	}
 
