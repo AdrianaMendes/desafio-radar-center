@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.backend.radar.center.models.dtos.DashboardDto;
 import com.backend.radar.center.models.dtos.RecordCreateDto;
 import com.backend.radar.center.models.entities.RecordEntity;
 import com.backend.radar.center.services.RecordService;
@@ -37,6 +38,11 @@ public class RecordController {
 	@GetMapping(path = "findById/{id}")
 	public ResponseEntity<RecordEntity> findById(@PathVariable final Long id) {
 		return new ResponseEntity<>(this.recordService.findById(id), HttpStatus.OK);
+	}
+	
+	@GetMapping(path = "dashboard")
+	public ResponseEntity<DashboardDto> dashboard() {
+		return new ResponseEntity<>(this.recordService.dashboard(), HttpStatus.OK);
 	}
 	
 	@GetMapping(path = "findByLicensePlate/{licensePlate}")

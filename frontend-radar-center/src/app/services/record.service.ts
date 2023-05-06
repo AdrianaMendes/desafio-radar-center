@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from '@shared/environment';
-import { IRecord, IRecordCreateDto } from '@shared/interfaces';
+import { IDashboard, IRecord, IRecordCreateDto } from '@shared/interfaces';
 
 
 @Injectable({
@@ -23,6 +23,10 @@ export class RecordService {
 
     findById(id: number): Observable<IRecord> {
 		return this.httpClient.get<IRecord>(`${this.url}/findById/${id}`);
+	}
+
+	dashboard(id: number): Observable<IDashboard> {
+		return this.httpClient.get<IDashboard>(`${this.url}/dashboard`);
 	}
 
     findByLicensePlate(licensePlate: string): Observable<IRecord[]> {

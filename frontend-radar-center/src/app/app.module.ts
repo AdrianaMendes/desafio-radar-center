@@ -10,6 +10,7 @@ import { HomeComponent } from '@pages/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PipesModule } from '@modules/pipes.module';
 import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
+import { NgChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
     NgxMaskDirective,
     NgxMaskPipe,
     MaterialDesignModule,
+    NgChartsModule,
     PipesModule,
   ],
   providers: [provideNgxMask()],

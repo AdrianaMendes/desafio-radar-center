@@ -1,9 +1,9 @@
-<div class="app-container" [class.app-is-mobile]="mobileQuery.matches">
+<div class="flex-col h-100" [class.app-is-mobile]="mobileQuery.matches">
     <mat-toolbar color="primary" class="app-toolbar">
-        <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+        <button type="button" mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
         <h1 class="m-0">Radar Center</h1>
     </mat-toolbar>
-    <mat-sidenav-container class="app-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+    <mat-sidenav-container class="app-sidenav-container flex-auto flex-col" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
         <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
             fixedTopGap="56">
             <mat-nav-list>

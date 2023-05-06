@@ -1,5 +1,6 @@
 package com.backend.radar.center.services;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Random;
@@ -9,6 +10,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.backend.radar.center.models.dtos.DashboardDto;
 import com.backend.radar.center.models.dtos.RecordCreateDto;
 import com.backend.radar.center.models.entities.RecordEntity;
 import com.backend.radar.center.models.enums.VehicleClassEnum;
@@ -54,5 +56,22 @@ public class RecordService {
 		record.setSpeed(Math.round((80D + (20D * new Random().nextDouble())) * 100D) / 100D);
 
 		logger.info("Record created: " + this.recordRepository.save(record).toString());
+	}
+
+	public DashboardDto dashboard() {
+		DashboardDto dto = new DashboardDto();
+		
+		dto.setCountTotalRecords(this.recordRepository.count());
+		dto.setAverageSpeed(this.recordRepository.averageSpeed());
+		dto.setAverageSpeedLast10Min(new ArrayList<>(10));
+		dto.setCountVehicleClass(new ArrayList<>(VehicleClassEnum.length()));
+
+		for (Integer i = 0; i < 10; i++) {
+			dto.getAverageSpeedLast10Min().add(this.recordRepository.averageSpeedInterval(i + 1, i));
+		}
+		
+		dto.setCountVehicleClass(this.recordRepository.countAllByVehicleClass());
+		
+		return dto;
 	}
 }

@@ -1,5 +1,12 @@
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 
 .pad-0 {
     padding: 0px !important;
@@ -23,6 +30,10 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .pad-16 {
     padding: 16px !important;
+}
+
+.pad-32 {
+    padding: 32px !important;
 }
 
 .m-0 {
@@ -84,13 +95,13 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 // Flex
 
 .flex-row {
-    display: flex;
-    flex-direction: row;
+    display: flex !important;
+    flex-direction: row !important;
 }
 
 .flex-col {
-    display: flex;
-    flex-direction: column;
+    display: flex !important;
+    flex-direction: column !important;
 }
 
 .grid {
@@ -130,7 +141,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 
 .flex-auto {
-    flex: 1 1 auto;
+    flex: 1 1 auto !important;
 }
 
 .space-between {
