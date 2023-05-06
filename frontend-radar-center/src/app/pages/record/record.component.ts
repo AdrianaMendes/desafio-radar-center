@@ -17,7 +17,7 @@ export class RecordComponent implements AfterViewInit {
   constructor(private readonly recordService: RecordService) {
   }
   
-  ngAfterViewInit() {
+  ngAfterViewInit(): void {
     this.dataSource = new MatTableDataSource<IRecord>([]);
     this.recordService.findAll().subscribe({
       next: (response) => {
@@ -28,8 +28,12 @@ export class RecordComponent implements AfterViewInit {
     })
   }
 
-  applyFilter(event: Event) {
+  applyFilter(event: Event): void {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+
+  refresh(): void {
+    this.ngAfterViewInit();
   }
 }

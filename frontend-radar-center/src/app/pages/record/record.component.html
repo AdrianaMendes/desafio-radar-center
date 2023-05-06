@@ -1,9 +1,12 @@
 <h2>Record</h2>
 <mat-divider />
-<mat-form-field>
-    <mat-label>Filter</mat-label>
-    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
-</mat-form-field>
+<div class="flex-row align-baseline gap-16">
+    <mat-form-field>
+        <mat-label>Filter</mat-label>
+        <input matInput (keyup)="applyFilter($event)" #input>
+    </mat-form-field>
+    <button type="button" (click)="refresh()" color="primary" mat-raised-button>Refresh</button>
+</div>
 <mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
     <ng-container matColumnDef="id">
         <mat-header-cell *matHeaderCellDef mat-sort-header>ID</mat-header-cell>
@@ -23,7 +26,7 @@
     </ng-container>
     <ng-container matColumnDef="licensePlate">
         <mat-header-cell *matHeaderCellDef mat-sort-header>License Plate</mat-header-cell>
-        <mat-cell *matCellDef="let row"> {{row.licensePlate}} </mat-cell>
+        <mat-cell *matCellDef="let row"> {{row.licensePlate | mask: 'SSS 9S99'}} </mat-cell>
     </ng-container>
     <mat-header-row *matHeaderRowDef="displayedColumns" />
     <mat-row *matRowDef="let row; columns: displayedColumns;" />

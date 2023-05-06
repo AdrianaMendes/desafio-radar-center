@@ -25,7 +25,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     padding: 16px !important;
 }
 
-
 .m-0 {
     margin: 0px !important;
 }
@@ -48,4 +47,158 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .m-16 {
     margin: 16px !important;
+}
+
+.gap-0 {
+    gap: 0px !important;
+}
+
+.gap-1 {
+    gap: 1px !important;
+}
+
+.gap-2 {
+    gap: 2px !important;
+}
+
+.gap-4 {
+    gap: 4px !important;
+}
+
+.gap-8 {
+    gap: 8px !important;
+}
+
+.gap-16 {
+    gap: 16px !important;
+}
+
+.w-100 {
+    width: 100% !important;
+}
+
+.h-100 {
+    height: 100% !important;
+}
+
+// Flex
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.grid {
+    display: grid;
+}
+
+.grid {
+    display: grid;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.flex-col-xs {
+    @media screen and (max-width: 599px) {
+        flex-direction: column;
+    }
+}
+
+.flex-col-sm {
+    @media screen and (min-width: 959px) {
+        flex-direction: column;
+    }
+}
+
+.flex-row-xs {
+    @media screen and (max-width: 599px) {
+        flex-direction: row;
+    }
+}
+
+.flex-row-sm {
+    @media screen and (min-width: 959px) {
+        flex-direction: row;
+    }
+}
+
+.flex-auto {
+    flex: 1 1 auto;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.space-around {
+    justify-content: space-around;
+}
+
+.space-evenly {
+    justify-content: space-evenly;
+}
+
+.stretch {
+    justify-content: stretch;
+}
+
+.align-stretch {
+    align-content: stretch
+}
+
+.start {
+    justify-content: start;
+}
+
+.content-start {
+    align-content: flex-start;
+}
+
+.flex-start {
+    align-items: flex-start;
+}
+
+.end {
+    justify-content: end;
+}
+
+.flex-end {
+    align-items: flex-end;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.align-baseline {
+    align-items: baseline;
+}
+
+.flex {
+    display: flex !important;
+}
+
+.flex-1 {
+    flex: 1
+}
+
+.flex-grow {
+    flex-grow: 1;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }

@@ -9,6 +9,7 @@ import { RecordComponent } from '@pages/record/record.component';
 import { HomeComponent } from '@pages/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PipesModule } from '@modules/pipes.module';
+import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
 
 @NgModule({
   declarations: [
@@ -21,10 +22,12 @@ import { PipesModule } from '@modules/pipes.module';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    NgxMaskDirective,
+    NgxMaskPipe,
     MaterialDesignModule,
     PipesModule,
   ],
-  providers: [],
+  providers: [provideNgxMask()],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
