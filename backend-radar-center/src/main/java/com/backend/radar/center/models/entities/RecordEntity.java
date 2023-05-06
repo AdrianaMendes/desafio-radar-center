@@ -16,25 +16,25 @@ import com.backend.radar.center.models.enums.VehicleClassEnum;
 
 import lombok.Data;
 
-@Entity	
+@Entity
 @Data
 @Table(name = "records")
 public class RecordEntity implements Serializable {
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+
 	@Column(columnDefinition = "DECIMAL(4,2)")
 	private Double speed;
-	
+
 	@Column(length = 7)
 	private String licensePlate;
-	
+
 	@Column
 	private Date time;
-	
+
 	@Enumerated(EnumType.STRING)
 	private VehicleClassEnum vehicleClass;
 

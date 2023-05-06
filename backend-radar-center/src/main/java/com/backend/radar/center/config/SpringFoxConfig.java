@@ -19,7 +19,7 @@ public class SpringFoxConfig {
 
 	@Bean
 	Docket api() {
-		return new Docket(DocumentationType.SWAGGER_2).select().apis(RequestHandlerSelectors.basePackage("com.spring.api.controllers"))
+		return new Docket(DocumentationType.SWAGGER_2).select().apis(RequestHandlerSelectors.basePackage("com.backend.radar.center.controllers"))
 				.paths(PathSelectors.any()).build().apiInfo(apiInfo());
 	}
 
