@@ -1,1 +1,51 @@
-/* You can add global styles to this file, and also import other style files */
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.pad-0 {
+    padding: 0px !important;
+}
+
+.pad-1 {
+    padding: 1px !important;
+}
+
+.pad-2 {
+    padding: 2px !important;
+}
+
+.pad-4 {
+    padding: 4px !important;
+}
+
+.pad-8 {
+    padding: 8px !important;
+}
+
+.pad-16 {
+    padding: 16px !important;
+}
+
+
+.m-0 {
+    margin: 0px !important;
+}
+
+.m-1 {
+    margin: 1px !important;
+}
+
+.m-2 {
+    margin: 2px !important;
+}
+
+.m-4 {
+    margin: 4px !important;
+}
+
+.m-8 {
+    margin: 8px !important;
+}
+
+.m-16 {
+    margin: 16px !important;
+}
