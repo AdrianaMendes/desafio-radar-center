@@ -2,7 +2,7 @@
 
 # Radar Center
 
-O presente projeto é uma aplicação WEB com backend em java spring e angular no frontend. No desenvolvimento foi empregado Lombok, Swagger e Postgresql. O contexto da aplicação é sobre uma central de infrações, onde os registros são gerados de forma automatizada a cada três segundos.
+O projeto consiste no desenvolvimento de uma API e um Serviço. A aplicação WEB foi desenvolvida com backend em Java 11 + Spring Boot + Maven + PostgreSQL, Angular e documentação Swagger. O contexto da aplicação é sobre uma central de infrações, onde os registros são gerados de forma automatizada a cada três segundos e os dados são atualizados no dashboard a cada dez segundos.
 
 ## Teste localhost
 
@@ -34,7 +34,7 @@ Para acessar a documentação swagger acesse esta URL: http://localhost:8080/swa
 
 ## Frontend Angular
 
-Para rodar aplicação frontend é preciso ter o Node e NPM instalado no ambiente e executar o comando npm start e acessar o link http://localhost:4200/
+Para executar a aplicação frontend é preciso ter o Node e NPM instalado no ambiente e executar o comando npm start e acessar o link http://localhost:4200/
 
 ![Frontend 1](images/frontend-1.png)
 
@@ -49,6 +49,6 @@ Para mais informações acesse o arquivo :scroll: `LICENSE`.
 
 :email: E-Mail: ​[adrianamirianmc@gmail.com](adrianamirianmc@gmail.com)
 
-:clipboard: Linkedin: ​[https://www.linkedin.com/in/adriana-mirian-mendes-cardoso](https://www.linkedin.com/in/adriana-mirian-mendes-cardoso)
+:clipboard: Linkedin: ​[https://www.linkedin.com/in/amendescardoso](https://www.linkedin.com/in/adriana-mirian-mendes-cardoso)
 
 :package: GitHub:  [https://github.com/AdrianaMendes](https://github.com/AdrianaMendes)
