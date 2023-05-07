@@ -34,7 +34,7 @@ Para acessar a documentação swagger acesse esta URL: http://localhost:8080/swa
 
 ## Frontend Angular
 
-Para rodar aplicação frontend é preciso ter o Node e npm instalado no ambiente e executar o comando npm start.
+Para rodar aplicação frontend é preciso ter o Node e NPM instalado no ambiente e executar o comando npm start e acessar o link http://localhost:4200/
 
 ![Frontend 1](images/frontend-1.png)
 
