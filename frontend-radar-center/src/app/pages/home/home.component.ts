@@ -84,7 +84,7 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
           datasets: [
             {
               data: response.averageSpeedLast10Min,
-              label: 'Velocidade',
+              label: 'Speed',
               fill: 'origin'
             }
           ],
