@@ -39,12 +39,12 @@ public class RecordController {
 	public ResponseEntity<RecordEntity> findById(@PathVariable final Long id) {
 		return new ResponseEntity<>(this.recordService.findById(id), HttpStatus.OK);
 	}
-	
+
 	@GetMapping(path = "dashboard")
 	public ResponseEntity<DashboardDto> dashboard() {
 		return new ResponseEntity<>(this.recordService.dashboard(), HttpStatus.OK);
 	}
-	
+
 	@GetMapping(path = "findByLicensePlate/{licensePlate}")
 	public ResponseEntity<List<RecordEntity>> findByLicensePlate(@PathVariable final String licensePlate) {
 		return new ResponseEntity<>(this.recordService.findByLicensePlate(licensePlate), HttpStatus.OK);

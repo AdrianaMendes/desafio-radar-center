@@ -1,1 +1,39 @@
+[![Licence](https://img.shields.io/github/license/Ileriayo/markdown-badges?style=for-the-badge)](./LICENSE) ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white) ![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white) ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white) ![Angular](https://img.shields.io/badge/angular-%23DD0031.svg?style=for-the-badge&logo=angular&logoColor=white) ![Spring](https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white) ![Swagger](https://img.shields.io/badge/-Swagger-%23Clojure?style=for-the-badge&logo=swagger&logoColor=white)
+
 # Radar Center
+
+O presente projeto é uma aplicação WEB com backend em java spring e angular no frontend. No desenvolvimento foi empregado Lombok, Swagger e Postgresql. O contexto da aplicação é sobre uma central de infrações, onde os registros são gerados de forma automatizada a cada três segundos.
+
+## Teste localhost
+
+Para testar localmente o Swagger e a aplicação com servidor Postgresql, apenas alterar o arquivo properties do backend conforme mostrado abaixo.
+
+```
+## POSTGRES
+db.username=postgres
+db.password=1234
+db.host=localhost
+db.database=postgres
+db.port=5432
+```
+
+![ApplicationProperties](images/application-properties.png)
+
+![Connection 1](images/connection-1.png)
+
+![Connection 2](images/connection-2.png)
+
+Para acessar a documentação swagger acesse esta URL: http://localhost:8080/swagger-ui/index.html
+
+## Licença
+
+Este projeto está sob licença MIT © 2023 Adriana Mirian Mendes Cardoso.
+Para mais informações acesse o arquivo :scroll: `LICENSE`.
+
+## Contato
+
+:email: E-Mail: ​[adrianamirianmc@gmail.com](adrianamirianmc@gmail.com)
+
+:clipboard: Linkedin: ​[https://www.linkedin.com/in/adriana-mirian-mendes-cardoso](https://www.linkedin.com/in/adriana-mirian-mendes-cardoso)
+
+:package: GitHub:  [https://github.com/AdrianaMendes](https://github.com/AdrianaMendes)

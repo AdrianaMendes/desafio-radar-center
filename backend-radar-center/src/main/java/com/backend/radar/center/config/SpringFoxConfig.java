@@ -24,7 +24,7 @@ public class SpringFoxConfig {
 	}
 
 	private ApiInfo apiInfo() {
-		return new ApiInfo("Radar Center", "Aplicação backend de teste em java spring, usando: Lombok, servidor H2 e documentação Swagger.", "1.0.0v", null,
+		return new ApiInfo("Radar Center", "Aplicação backend de teste em java spring, usando: Lombok, servidor Postgresql e documentação Swagger.", "1.2.0v", null,
 				new Contact("Adrina Mirian Mendes Cardoso", "https://github.com/AdrianaMendes", "adrianamirianmc@gmail.com"), "MIT",
 				"https://opensource.org/licenses/MIT", Collections.emptyList());
 	}

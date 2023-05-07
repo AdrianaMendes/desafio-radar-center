@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.backend.radar.center</groupId>
 	<artifactId>backend-radar-center</artifactId>
-	<version>0.0.1</version>
+	<version>1.2.0</version>
 	<name>backend-radar-center</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
@@ -47,11 +47,6 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-			<scope>runtime</scope>
 		</dependency>
 		<dependency>
 		    <groupId>com.github.curious-odd-man</groupId>
