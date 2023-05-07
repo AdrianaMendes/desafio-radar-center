@@ -22,10 +22,8 @@ export class RecordComponent implements AfterViewInit {
     this.dataSource = new MatTableDataSource<IRecordTable>([]);
     this.recordService.findAll().subscribe({
       next: (response) => {
-
         this.dataSource.data = response.map(x => {
           const { id, licensePlate, speed, time, vehicleClass } = x;
-
           return {
             id: id + '',
             licensePlate: this.ngxMaskPipe.transform(licensePlate, 'SSS-9S99'),

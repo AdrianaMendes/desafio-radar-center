@@ -1,4 +1,4 @@
-[![Licence](https://img.shields.io/github/license/Ileriayo/markdown-badges?style=for-the-badge)](./LICENSE) ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white) ![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white) ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white) ![Angular](https://img.shields.io/badge/angular-%23DD0031.svg?style=for-the-badge&logo=angular&logoColor=white) ![Spring](https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white) ![Swagger](https://img.shields.io/badge/-Swagger-%23Clojure?style=for-the-badge&logo=swagger&logoColor=white)
+[![Licence](https://img.shields.io/github/license/AdrianaMendes/bdr-desafio-radar-center?style=for-the-badge)](./LICENSE) ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white) ![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white) ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white) ![Angular](https://img.shields.io/badge/angular-%23DD0031.svg?style=for-the-badge&logo=angular&logoColor=white) ![Spring](https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white) ![Swagger](https://img.shields.io/badge/-Swagger-%23Clojure?style=for-the-badge&logo=swagger&logoColor=white)
 
 # Radar Center
 
@@ -6,7 +6,7 @@ O presente projeto é uma aplicação WEB com backend em java spring e angular n
 
 ## Teste localhost
 
-Para testar localmente o Swagger e a aplicação com servidor Postgresql, apenas alterar o arquivo properties do backend conforme mostrado abaixo.
+Para testar localmente a aplicação, é preciso configurar o arquivo properties do backend conforme mostrado abaixo. No presente projeto foi utlizado a IDE Spring Tool Suite para realizar o deploy.
 
 ```
 ## POSTGRES
@@ -21,9 +21,24 @@ db.port=5432
 
 ![Connection 1](images/connection-1.png)
 
-![Connection 2](images/connection-2.png)
+![Spring Tool Suite](images/sts.png)
+
+
+## Swagger
+
+O projeto foi desenvolvido com a documentação Swagger, que está disponível no aquivo ```swagger.json```.
 
 Para acessar a documentação swagger acesse esta URL: http://localhost:8080/swagger-ui/index.html
+
+![Swagger](images/swagger-1.png)
+
+## Frontend Angular
+
+Para rodar aplicação frontend é preciso ter o Node e npm instalado no ambiente e executar o comando npm start.
+
+![Frontend 1](images/frontend-1.png)
+
+![Frontend 2](images/frontend-2.png)
 
 ## Licença
 

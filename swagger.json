@@ -1,0 +1,370 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "Aplicação backend de teste em java spring, usando: Lombok, servidor Postgresql e documentação Swagger.",
+        "version": "1.2.0v",
+        "title": "Radar Center",
+        "contact": {
+            "name": "Adrina Mirian Mendes Cardoso",
+            "url": "https://github.com/AdrianaMendes",
+            "email": "adrianamirianmc@gmail.com"
+        },
+        "license": {
+            "name": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+        }
+    },
+    "host": "localhost:8080",
+    "basePath": "/",
+    "tags": [
+        {
+            "name": "Record",
+            "description": "Record Controller"
+        }
+    ],
+    "paths": {
+        "/records/dashboard": {
+            "get": {
+                "tags": [
+                    "Record"
+                ],
+                "summary": "dashboard",
+                "operationId": "dashboardUsingGET",
+                "produces": [
+                    "*/*"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/DashboardDto"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/records/delete/{id}": {
+            "delete": {
+                "tags": [
+                    "Record"
+                ],
+                "summary": "delete",
+                "operationId": "deleteUsingDELETE",
+                "produces": [
+                    "*/*"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "204": {
+                        "description": "No Content"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "/records/findAll": {
+            "get": {
+                "tags": [
+                    "Record"
+                ],
+                "summary": "findAll",
+                "operationId": "findAllUsingGET",
+                "produces": [
+                    "*/*"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/RecordEntity"
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/records/findById/{id}": {
+            "get": {
+                "tags": [
+                    "Record"
+                ],
+                "summary": "findById",
+                "operationId": "findByIdUsingGET",
+                "produces": [
+                    "*/*"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/RecordEntity"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/records/findByLicensePlate/{licensePlate}": {
+            "get": {
+                "tags": [
+                    "Record"
+                ],
+                "summary": "findByLicensePlate",
+                "operationId": "findByLicensePlateUsingGET",
+                "produces": [
+                    "*/*"
+                ],
+                "parameters": [
+                    {
+                        "name": "licensePlate",
+                        "in": "path",
+                        "description": "licensePlate",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/RecordEntity"
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/records/save": {
+            "post": {
+                "tags": [
+                    "Record"
+                ],
+                "summary": "save",
+                "operationId": "saveUsingPOST",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "*/*"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "dto",
+                        "description": "dto",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/RecordCreateDto"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/RecordEntity"
+                        }
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "CountVehicleClassProjection": {
+            "type": "object",
+            "properties": {
+                "count": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "vehicleClass": {
+                    "type": "string",
+                    "enum": [
+                        "BUS",
+                        "CAR",
+                        "MOTORCYCLE",
+                        "SUV",
+                        "TRUCK"
+                    ]
+                }
+            },
+            "title": "CountVehicleClassProjection"
+        },
+        "DashboardDto": {
+            "type": "object",
+            "properties": {
+                "averageSpeed": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "averageSpeedLast10Min": {
+                    "type": "array",
+                    "items": {
+                        "type": "number",
+                        "format": "double"
+                    }
+                },
+                "countTotalRecords": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "countVehicleClass": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/CountVehicleClassProjection"
+                    }
+                }
+            },
+            "title": "DashboardDto"
+        },
+        "RecordCreateDto": {
+            "type": "object",
+            "properties": {
+                "licensePlate": {
+                    "type": "string",
+                    "example": "ABC1D23",
+                    "description": "Placa do automóvel Mercosul",
+                    "pattern": "[A-Z]{3}\\d[A-Z]\\d{2}"
+                },
+                "speed": {
+                    "type": "number",
+                    "format": "double",
+                    "example": 90.0,
+                    "description": "Velocidade",
+                    "minimum": 80,
+                    "maximum": 100,
+                    "exclusiveMinimum": false,
+                    "exclusiveMaximum": false
+                },
+                "time": {
+                    "type": "string",
+                    "format": "date-time",
+                    "example": "2023-01-01T12:00:00.000Z",
+                    "description": "Horário do registro"
+                },
+                "vehicleClass": {
+                    "type": "string",
+                    "example": "BUS",
+                    "description": "Classe do veículo",
+                    "enum": [
+                        "BUS",
+                        "CAR",
+                        "MOTORCYCLE",
+                        "SUV",
+                        "TRUCK"
+                    ]
+                }
+            },
+            "title": "RecordCreateDto"
+        },
+        "RecordEntity": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "licensePlate": {
+                    "type": "string"
+                },
+                "speed": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "time": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "vehicleClass": {
+                    "type": "string",
+                    "enum": [
+                        "BUS",
+                        "CAR",
+                        "MOTORCYCLE",
+                        "SUV",
+                        "TRUCK"
+                    ]
+                }
+            },
+            "title": "RecordEntity"
+        }
+    }
+}
