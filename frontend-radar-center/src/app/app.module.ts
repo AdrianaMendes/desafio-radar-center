@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { PipesModule } from '@modules/pipes.module';
 import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
 import { NgChartsModule } from 'ng2-charts';
+import { DatePipe, DecimalPipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { NgChartsModule } from 'ng2-charts';
     NgChartsModule,
     PipesModule,
   ],
-  providers: [provideNgxMask()],
+  providers: [provideNgxMask(), DecimalPipe, DatePipe, NgxMaskPipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

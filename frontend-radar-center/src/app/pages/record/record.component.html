@@ -15,11 +15,11 @@
         </ng-container>
         <ng-container matColumnDef="speed">
             <mat-header-cell *matHeaderCellDef mat-sort-header>Speed</mat-header-cell>
-            <mat-cell *matCellDef="let row"> {{row.speed | number : '1.2-2' }}km/h </mat-cell>
+            <mat-cell *matCellDef="let row"> {{row.speed}} </mat-cell>
         </ng-container>
         <ng-container matColumnDef="time">
             <mat-header-cell *matHeaderCellDef mat-sort-header>Time</mat-header-cell>
-            <mat-cell *matCellDef="let row"> {{row.time | date: 'dd/MM/yyyy HH:mm:ss'}} </mat-cell>
+            <mat-cell *matCellDef="let row"> {{row.time }} </mat-cell>
         </ng-container>
         <ng-container matColumnDef="vehicleClass">
             <mat-header-cell *matHeaderCellDef mat-sort-header>Vehicle Class</mat-header-cell>
@@ -27,7 +27,7 @@
         </ng-container>
         <ng-container matColumnDef="licensePlate">
             <mat-header-cell *matHeaderCellDef mat-sort-header>License Plate</mat-header-cell>
-            <mat-cell *matCellDef="let row"> {{row.licensePlate | mask: 'SSS-9S99'}} </mat-cell>
+            <mat-cell *matCellDef="let row"> {{row.licensePlate }} </mat-cell>
         </ng-container>
         <mat-header-row *matHeaderRowDef="displayedColumns" />
         <mat-row *matRowDef="let row; columns: displayedColumns;" />

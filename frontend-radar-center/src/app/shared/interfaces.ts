@@ -10,6 +10,14 @@ export interface IRecord {
     vehicleClass: EVehicleClass;
 }
 
+export interface IRecordTable {
+    id: string;
+    speed: string;
+    licensePlate: string;
+    time: string;
+    vehicleClass: string;
+}
+
 export interface IRecordCreateDto {
     speed: number;
     licensePlate: string;
