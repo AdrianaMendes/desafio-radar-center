@@ -2,11 +2,13 @@
 
 # Radar Center
 
-O projeto consiste no desenvolvimento de uma API e um Serviço. A aplicação WEB foi desenvolvida com backend em Java 11 + Spring Boot + Maven + PostgreSQL, Angular e documentação Swagger. O contexto da aplicação é sobre uma central de infrações, onde os registros são gerados de forma automatizada a cada três segundos e os dados são atualizados no dashboard a cada dez segundos.
+O projeto consiste no desenvolvimento de uma API e de um serviço. A aplicação web foi construída com backend em Java 11, utilizando Spring Boot, Maven e PostgreSQL, e frontend em Angular, com documentação gerada pelo Swagger.
 
-## Teste localhost
+O sistema funciona como uma central de infrações, onde os registros são gerados automaticamente a cada três segundos, e os dados do dashboard são atualizados a cada dez segundos.
 
-Para testar localmente a aplicação, é preciso configurar o arquivo properties do backend conforme mostrado abaixo. No presente projeto foi utlizado a IDE Spring Tool Suite para realizar o deploy.
+## Deploy
+
+Para testar a aplicação localmente é necessário configurar o arquivo ``properties`` conforme o exemplo abaixo. 
 
 ```
 ## POSTGRES
@@ -17,18 +19,23 @@ db.database=postgres
 db.port=5432
 ```
 
-![ApplicationProperties](images/application-properties.png)
+1. Clone o repositório:
+   ```bash
+   git clone git clone https://github.com/AdrianaMendes/desafio-radar-center.git
+   ```
 
-![Connection 1](images/connection-1.png)
+2. Navegue até o diretório do projeto e execute:
+   ```bash
+   ./mvnw spring-boot:run
+   ```
 
-![Spring Tool Suite](images/sts.png)
-
+3. Acesse o sistema em:
+   ```
+   http://localhost:8080/swagger-ui/index.html
 
 ## Swagger
 
 O projeto foi desenvolvido com a documentação Swagger, que está disponível no aquivo ```swagger.json```.
-
-Para acessar a documentação swagger acesse esta URL: http://localhost:8080/swagger-ui/index.html
 
 ![Swagger](images/swagger-1.png)
 
@@ -47,8 +54,8 @@ Para mais informações acesse o arquivo :scroll: `LICENSE`.
 
 ## Contato
 
-:email: E-Mail: ​[adrianamirianmc@gmail.com](adrianamirianmc@gmail.com)
+**Adriana Cardoso**  
+Desenvolvedora Java | Spring Boot | Angular  
 
-:clipboard: Linkedin: ​[https://www.linkedin.com/in/amendescardoso](https://www.linkedin.com/in/adriana-mirian-mendes-cardoso)
-
-:package: GitHub:  [https://github.com/AdrianaMendes](https://github.com/AdrianaMendes)
+[LinkedIn](https://www.linkedin.com/in/amendescardoso/)  
+ 📧 adrianamirianmc@gmail.com
