@@ -49,8 +49,7 @@ Para executar a aplicação frontend é preciso ter o Node e NPM instalado no am
 
 ## Licença
 
-Este projeto está sob licença MIT © 2023 Adriana Mirian Mendes Cardoso.
-Para mais informações acesse o arquivo :scroll: `LICENSE`.
+Este projeto está sob licença MIT © 2023 Adriana Cardoso. Para mais informações acesse o arquivo :scroll: `LICENSE`.
 
 ## Contato
 
